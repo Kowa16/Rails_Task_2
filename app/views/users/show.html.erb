@@ -1,0 +1,21 @@
+<div class="side-menu">
+  <p class="active">
+    <%= link_to "アカウント", user_path(current_user.id) %>
+  </p>
+  <p class="non-active">
+    <%= link_to "プロフィール", edit_profile_path(current_user.id) %>
+  </p>
+</div>
+
+<article class="user-show">
+  <%= form_for @user do |f| %>
+  <div class="input-label">
+    <%= f.label :email, "Email" %>
+  </div>
+  <div class="input-form">
+    <%= f.email_field :email %>
+  </div>
+  <%= link_to "編集", edit_user_path(current_user.id) %>
+
+  <% end %>
+</article>

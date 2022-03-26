@@ -1,0 +1,42 @@
+<div class="side-menu">
+  <p class="non-active">
+    <%= link_to "アカウント", user_path(current_user.id) %>
+  </p>
+  <p class="active">
+    <%= link_to "プロフィール", edit_profile_path(current_user.id) %>
+  </p>
+</div>
+
+
+  <article class="user-show">
+    <%= form_for @profile do |f| %>
+    <div class="icon">
+      <% if @profile.avatar.present? %>
+        <%= image_tag @profile.avatar, class: "icon" %>
+      <% else %>
+        <%= image_tag "default_icon.jpg", class: "icon" %>
+      <% end %>
+    </div>
+    <div class="input-label">
+      <%= f.label :profile_name,"ユーザー名" %>
+    </div>
+    <div class="input-form">
+      <%= f.text_field :profile_name %>
+    </div>
+    <div class="input-label">
+      <%= f.label :self_introduction,"自己紹介" %>
+    </div>
+    <div class="input-form">
+      <%= f.text_field :self_introduction %>
+    </div>
+    <div class="input-label">
+    <%= f.label :self_introduction,"ユーザーアイコン" %>
+    </div>
+    <div class="input-form">
+    <%= f.file_field :avatar %>
+    </div>
+
+
+      <%= f.submit "保存する場合はクリック" %>
+      <% end %>
+  </article>
