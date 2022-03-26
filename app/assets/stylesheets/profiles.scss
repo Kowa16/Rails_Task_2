@@ -1,0 +1,39 @@
+// Place all the styles related to the profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.side-menu {
+  margin-top: 60px;
+  margin-left: 10px;
+  display: inline-block;
+  width: 8.5%;
+  padding: 0;
+
+
+  .active {
+    font-size: 15px;
+    border-right: 3px solid #4a90e2;
+    cursor: pointer;
+    a {
+      text-decoration: none;
+      color: #4a90e2;
+    }
+  }
+  .non-active {
+    font-size: 15px;
+    cursor: pointer;
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    a:hover {
+      color: #4a90e2;
+    }
+  }
+}
+
+.icon{
+    border-radius:  50%;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
